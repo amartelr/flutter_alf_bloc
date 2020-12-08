@@ -1,20 +1,10 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_alf_bloc/ui/page/home_page.dart';
+import 'package:flutter_alf_bloc/app.dart';
 
-void main() => runApp(MyApp());
+import 'comp/simplebloc_observer.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(child: HomePage()),
-      ),
-    );
-  }
+void main() {
+  Bloc.observer = SimpleBlocObserver();
+  runApp(App());
 }
